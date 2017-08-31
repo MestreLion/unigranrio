@@ -18,38 +18,32 @@
  */
 
 import java.io.FileReader;
-import java.io.IOException;
 import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.FileNotFoundException;
 
 public class ordena
 {
-	public static void main(String[] args)
+	public static void main(String[] args) throws IOException
 	{
-		FileReader file;
-		String line;
+		BufferedReader buf = null;
 
 		if(args.length != 1) {
 			usage("");
-			return;
+			System.exit(1);
 		}
 
 		try {
-			file = new FileReader(args[0]);
-		} catch (IOException e) {
-			usage(e.getMessage());
-			return;
+			buf = new BufferedReader(new FileReader(args[0]));
+		} catch (FileNotFoundException e) {
+			usage("Não foi possível abrir o arquivo: " + e.getMessage());
+			System.exit(1);
 		}
 
+		for (String line; (line = buf.readLine()) != null;)
+			System.out.println(line);
 
-		try {
-			BufferedReader buf = new BufferedReader(file);
-			while ((line = buf.readLine()) != null)
-				System.out.println(line);
-			buf.close();
-			file.close();
-		} catch (IOException e) {
-			System.err.println("ERRO: " + e.getMessage() + ": " + e);
-		}
+		buf.close();
 	}
 
 
