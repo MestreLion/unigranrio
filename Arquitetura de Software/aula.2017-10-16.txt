@@ -1,0 +1,5 @@
+Trabalho em grupo:
+Diagrama de Classes
+	- 8 a 12 classes
+	- Pelo menos 1 especialização
+	- Só atributos

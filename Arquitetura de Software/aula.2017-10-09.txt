@@ -1,0 +1,18 @@
+Google Classrom
+	manhã: 84yu0w
+	noite: jyi9ml6
+
+Módulo 6
+
+Pergunta de prova:
+
+1) O que é uma Interface? Quais suas propriedades? O que é realização? Apresente um diagrama de classes com um exemplo de realização
+
+- Definição: Especificação de um contrato de serviços que pode ser realizado (ou implementado) por uma ou mais classes
+- Propriedades:
+	- Se assemelha a uma classe abstrata (classe sem implementação)
+	-
+
+
+Trabalho:
+	Metodo para calcular raiz quadrada
