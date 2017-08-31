@@ -1,5 +1,5 @@
 /*
- * Ordena - Exibe as linhas de um arquivo texto ordenadas alfabeticamente
+ * Imprime - Exibe as linhas de um arquivo texto eficientemente
  *
  *   Copyright (C) 2017 Rodrigo Silva (MestreLion) <linux@rodrigosilva.com>
  *
@@ -22,7 +22,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.FileNotFoundException;
 
-public class ordena
+public class imprime
 {
 	public static void main(String[] args) throws IOException
 	{
@@ -49,9 +49,9 @@ public class ordena
 
 	private static void usage(String msg)
 	{
-		System.err.println("Exibe as linhas de um arquivo texto ordenadas alfabeticamente");
+		System.err.println("Exibe as linhas de um arquivo texto");
 		if(msg != "")
 			System.err.println("ERRO: " + msg);
-		System.err.println("Uso: `java ordena ARQUIVO`");
+		System.err.println("Uso: `java imprime ARQUIVO`");
 	}
 }

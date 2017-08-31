@@ -1,6 +1,6 @@
 #!/bin/bash -ue
 #
-# ordena - wrapper to run 'ordena' java class, recompiling it if needed
+# imprime - wrapper to run a java class, recompiling it if needed
 #
 #    Copyright (C) 2017 Rodrigo Silva (MestreLion) <linux@rodrigosilva.com>
 #
