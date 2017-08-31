@@ -35,12 +35,8 @@ public class raiz
 			return;
 		}
 
-		//double r1 = Math.sqrt(num);
-		//System.out.println(r1);
-
 		double r2 = raiz(num);
 		System.out.println(r2);
-		//System.out.println("Delta: " + Math.abs(r1 - r2));
 	}
 
 
