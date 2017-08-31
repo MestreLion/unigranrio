@@ -1,0 +1,4 @@
+TDE01 - Cálculo da Raiz Quadrada
+Prazo: 26 de ago 12:00
+
+Crie um programa em Java que leia um número real (double) e informe a raiz quadrada deste número. Você deverá calcular o número através do algoritmo de aproximações sucessivas.
