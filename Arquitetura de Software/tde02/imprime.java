@@ -20,30 +20,25 @@
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.FileNotFoundException;
 
 public class imprime
 {
-	public static void main(String[] args) throws IOException
+	public static void main(String[] args)
 	{
-		BufferedReader buf = null;
-
 		if(args.length != 1) {
 			usage("");
 			System.exit(1);
 		}
 
 		try {
-			buf = new BufferedReader(new FileReader(args[0]));
-		} catch (FileNotFoundException e) {
-			usage("Não foi possível abrir o arquivo: " + e.getMessage());
-			System.exit(1);
+			BufferedReader buf = new BufferedReader(new FileReader(args[0]));
+			for (String line; (line = buf.readLine()) != null;)
+				System.out.println(line);
+			buf.close();
 		}
-
-		for (String line; (line = buf.readLine()) != null;)
-			System.out.println(line);
-
-		buf.close();
+		catch (IOException e) {
+			usage("Não foi possível abrir o arquivo: " + e.getMessage());
+		}
 	}
 
 
