@@ -26,7 +26,7 @@ public class imprime
 	public static void main(String[] args)
 	{
 		if(args.length != 1) {
-			usage("");
+			usage();
 			System.exit(1);
 		}
 
@@ -34,12 +34,32 @@ public class imprime
 	}
 
 
-	private static void usage(String msg)
+	private static void usage(String msg, Throwable e)
 	{
-		System.err.println("Exibe as linhas de um arquivo texto");
-		if(msg != "")
-			System.err.println("ERRO: " + msg);
+		String err = "";
+		String out = "";
+
+		if (e != null)
+			err = e.getMessage();
+
+		if(!empty(msg) && !empty(err))
+			out = String.format("%s: %s", msg, err);
+		else
+			out = String.format("%s%s", msg, err);
+
+		System.err.println("imprime: Exibe as linhas de um arquivo texto");
+		if(!empty(out))
+			System.err.println("ERRO: " + out);
 		System.err.println("Uso: `java imprime ARQUIVO`");
+	}
+	private static void usage()            { usage("",  null); }
+	private static void usage(String msg)  { usage(msg, null); }
+	private static void usage(Throwable e) { usage("",  e); }
+
+
+	private static boolean empty(String s)
+	{
+		return (s == null || s.isEmpty());
 	}
 
 
@@ -52,7 +72,7 @@ public class imprime
 				System.out.println(line);
 		}
 		catch (IOException e) {
-			usage("Não foi possível ler o arquivo: " + e.getMessage());
+			usage("Não foi possível ler o arquivo", e);
 		}
 		finally {
 			if (buf != null)
