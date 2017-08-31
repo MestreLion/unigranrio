@@ -1,0 +1,26 @@
+TDE02 - Questões Teóricas e Implementação de Programa para Leitura de Arquivos e Ordenação
+Prazo: 2 de set 00:00
+
+1) Escreva uma definição para os seguintes conceitos:
+- Processo de Software
+- Especialização
+- Herança
+- Subclasse
+- Superclasse
+- Classe Abstrata
+- Método Abstrato
+- Realização
+- Interface
+- Dependência
+- Polimorfismo (aplicado à especialização e à realização)
+
+2) Crie um Diagrama de Classes que apresente a presença uma interface, duas
+realizações e uma dependência. Apresente estes exemplos na Notação
+Convencional e na Notação Icônica
+
+3) Crie um programa que leia que um arquivo com um número indefinido de linhas,
+onde cada uma destas linhas descreve uma String. Escreva o algoritmo que coloque
+estas linhas em ordem e imprima na tela as linhas ordenadamente.
+Obs* Por uma questão de organização, quebre o seu código em métodos estáticos
+que são responsáveis por tarefas pontuais. Assim evitamos que todo o código fique
+escrito somente no método main.
