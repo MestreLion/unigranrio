@@ -23,6 +23,8 @@
 
 exists() { type "${1:-}" >/dev/null 2>&1; }
 mtime()  { date +%s -r "${1:-}" 2>/dev/null || echo 0; }
+fatal()  { [[ "${1:-}" ]] && echo "$myname: error: $@" >&2; exit 1; }
+msg()    { [[ "${1:-}" ]] && echo "$myname: $@" >&2; }
 
 
 myname="${0##*/}"
@@ -34,11 +36,13 @@ obj=$mydir/$cls.class
 
 
 if ! exists java || ! exists javac; then
-	sudo apt-get install default-jdk || exit 1
+	msg "Installing Java JDK"
+	sudo apt-get install default-jdk || fatal "java is required"
 fi
 
 if (( $(mtime "$obj") <= $(mtime "$src") )); then
-	javac "$src" || exit 1
+	msg "Recompiling source"
+	javac "$src" || fatal
 fi
 
 cd "$mydir" &&
