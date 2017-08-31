@@ -31,10 +31,7 @@ public class imprime
 		}
 
 		try {
-			BufferedReader buf = new BufferedReader(new FileReader(args[0]));
-			for (String line; (line = buf.readLine()) != null;)
-				System.out.println(line);
-			buf.close();
+			imprime(args[0]);
 		}
 		catch (IOException e) {
 			usage("Não foi possível abrir o arquivo: " + e.getMessage());
@@ -48,5 +45,14 @@ public class imprime
 		if(msg != "")
 			System.err.println("ERRO: " + msg);
 		System.err.println("Uso: `java imprime ARQUIVO`");
+	}
+
+
+	private static void imprime(String path) throws IOException
+	{
+		BufferedReader buf = new BufferedReader(new FileReader(path));
+		for (String line; (line = buf.readLine()) != null;)
+			System.out.println(line);
+		buf.close();
 	}
 }
