@@ -30,12 +30,7 @@ public class imprime
 			System.exit(1);
 		}
 
-		try {
-			imprime(args[0]);
-		}
-		catch (IOException e) {
-			usage("Não foi possível abrir o arquivo: " + e.getMessage());
-		}
+		imprime(args[0]);
 	}
 
 
@@ -48,11 +43,20 @@ public class imprime
 	}
 
 
-	private static void imprime(String path) throws IOException
+	private static void imprime(String path)
 	{
-		BufferedReader buf = new BufferedReader(new FileReader(path));
-		for (String line; (line = buf.readLine()) != null;)
-			System.out.println(line);
-		buf.close();
+		BufferedReader buf = null;
+		try {
+			buf = new BufferedReader(new FileReader(path));
+			for (String line; (line = buf.readLine()) != null;)
+				System.out.println(line);
+		}
+		catch (IOException e) {
+			usage("Não foi possível ler o arquivo: " + e.getMessage());
+		}
+		finally {
+			if (buf != null)
+				try { buf.close(); } catch (IOException e) {}
+		}
 	}
 }
