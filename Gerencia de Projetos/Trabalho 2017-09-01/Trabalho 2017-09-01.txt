@@ -1,0 +1,9 @@
+Criar um projeto para a construção de um sistema simples para estacionamento usando o MS-Project.
+Prazo: 01/09/2017
+
+O grupo deverá subir um arquivo project, colocando no comentário o resumo do projeto contendo o prazo, o orçamento e a arquitetura do software usada. O exercício poderá ser feito em grupos de até 4 alunos.
+
+----------------------------------------
+
+Custo R$ 55,840, prazo de 01/09/2017 à 06/11/2017 (67 dias corridos)
+Trabalho feito em dupla com Diego Carvalho 5306054
