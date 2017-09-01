@@ -42,13 +42,13 @@ public class imprime
 		if (e != null)
 			err = e.getMessage();
 
-		if(!empty(msg) && !empty(err))
+		if(notBlank(msg) && notBlank(err))
 			out = String.format("%s: %s", msg, err);
 		else
 			out = String.format("%s%s", msg, err);
 
 		System.err.println("imprime: Exibe as linhas de um arquivo texto");
-		if(!empty(out))
+		if(notBlank(out))
 			System.err.println("ERRO: " + out);
 		System.err.println("Uso: `java imprime ARQUIVO`");
 	}
@@ -57,9 +57,9 @@ public class imprime
 	private static void usage(Throwable e) { usage("",  e); }
 
 
-	private static boolean empty(String s)
+	private static boolean notBlank(String s)
 	{
-		return (s == null || s.isEmpty());
+		return (s != null && s.length() == 0 && s.trim().length() == 0);
 	}
 
 
