@@ -1,8 +1,10 @@
 - Trocar email Cris
 - MS Project e outros progs MS secretaria
 - Astah
-- Trabalho Arquitetura Diagrama Classes
 - Hibernar (aumentar swap, boot via USB)
 - Inscrição Atividade Complementar sábado
 	Unigranrio => Institucional => Pró-Reitoria Comunitária => Atividades
-- Documentação e fotos
+- Documentação e fotos secretaria
+- Trabalho Thiago quarta-feira
+- Trabalho Anderson sexta
+- TDE03 Anderson
