@@ -30,7 +30,7 @@ msg()    { [[ "${1:-}" ]] && echo "$myname: $@" >&2; }
 myname="${0##*/}"
 mydir=$(dirname "$(readlink -f "$0")")
 
-cls=${myname%.*/}
+cls=${myname%.*}
 src=$mydir/$cls.java
 obj=$mydir/$cls.class
 
