@@ -26,15 +26,21 @@ public class tde03_2
 {
 	public static void main(String[] args)
 	{
-		ArrayList<String> linhas;
+		String            path;      // Text file path
+		String            line;      // Line being searched in text file
+		ArrayList<String> lines;     // Text file lines as ArrayList
+		int               position;  // Line position, -1 = not found
 
 		if(args.length != 2) {
 			usage();
 			System.exit(1);
 		}
 
-		linhas = linearray(args[0]);
-		System.out.println(linhas.size());
+		path = args[0];
+		line = args[1];
+
+		lines = linearray(path);
+		System.out.println(lines.size());
 	}
 
 
