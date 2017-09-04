@@ -20,17 +20,22 @@
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.ArrayList;
+
 
 public class tde02_3
 {
 	public static void main(String[] args)
 	{
+		ArrayList<String> lines;     // Text file lines as ArrayList
+
 		if(args.length != 1) {
 			usage();
 			System.exit(1);
 		}
 
-		imprime(args[0]);
+		lines = readfile(args[0]);
+		printlines(lines);
 	}
 
 
@@ -63,13 +68,14 @@ public class tde02_3
 	}
 
 
-	private static void imprime(String path)
+	private static ArrayList<String> readfile(String path)
 	{
+		ArrayList<String> out = new ArrayList<String>();
 		BufferedReader buf = null;
 		try {
 			buf = new BufferedReader(new FileReader(path));
 			for (String line; (line = buf.readLine()) != null;)
-				System.out.println(line);
+				out.add(line);
 		}
 		catch (IOException e) {
 			usage("Não foi possível ler o arquivo", e);
@@ -78,5 +84,13 @@ public class tde02_3
 			if (buf != null)
 				try { buf.close(); } catch (IOException e) {}
 		}
+		return out;
+	}
+
+
+	private static void printlines(ArrayList<String> lines)
+	{
+		for(String line: lines)
+			System.out.println(line);
 	}
 }
