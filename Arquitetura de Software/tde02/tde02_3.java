@@ -35,6 +35,7 @@ public class tde02_3
 		}
 
 		lines = readfile(args[0]);
+		sortlines(lines);
 		printlines(lines);
 	}
 
@@ -85,6 +86,25 @@ public class tde02_3
 				try { buf.close(); } catch (IOException e) {}
 		}
 		return out;
+	}
+
+
+	private static void sortlines(ArrayList<String> lines)
+	{
+		String aux;
+		boolean swap;
+		for (int i = 0; i < lines.size() - 1; i++) {
+			swap = false;
+			for (int j = 0; j < lines.size() - 1 - i; j++)
+				if (lines.get(j).compareTo(lines.get(j + 1)) > 0) {
+					aux = lines.get(j);
+					lines.set(j, lines.get(j + 1));
+					lines.set(j + 1, aux);
+					swap = true;
+				}
+			if(!swap)
+				break;
+		}
 	}
 
 
