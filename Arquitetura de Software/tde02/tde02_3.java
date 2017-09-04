@@ -1,5 +1,5 @@
 /*
- * Imprime - Exibe as linhas de um arquivo texto eficientemente
+ * TDE02-3 - Exibe em ordem alfabética as linhas de um arquivo texto
  *
  *   Copyright (C) 2017 Rodrigo Silva (MestreLion) <linux@rodrigosilva.com>
  *
@@ -21,7 +21,7 @@ import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-public class imprime
+public class tde02_3
 {
 	public static void main(String[] args)
 	{
@@ -47,10 +47,10 @@ public class imprime
 		else
 			out = String.format("%s%s", msg, err);
 
-		System.err.println("imprime: Exibe as linhas de um arquivo texto");
+		System.err.println("TDE02-3: Ordena as linhas de um texto");
 		if(notBlank(out))
 			System.err.println("ERRO: " + out);
-		System.err.println("Uso: `java imprime ARQUIVO`");
+		System.err.println("Uso: `java tde02_3 ARQUIVO`");
 	}
 	private static void usage()            { usage("",  null); }
 	private static void usage(String msg)  { usage(msg, null); }
