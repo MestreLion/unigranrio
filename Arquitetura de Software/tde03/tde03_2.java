@@ -39,8 +39,12 @@ public class tde03_2
 		path = args[0];
 		line = args[1];
 
-		lines = linearray(path);
-		System.out.println(lines.size());
+		lines = readfile(path);
+		position = searchline(lines, line);
+		System.out.println(position);
+
+		if (position < 0)
+			System.exit(1);
 	}
 
 
@@ -73,7 +77,7 @@ public class tde03_2
 	}
 
 
-	private static ArrayList<String> linearray(String path)
+	private static ArrayList<String> readfile(String path)
 	{
 		ArrayList<String> out = new ArrayList<String>();
 		BufferedReader buf = null;
@@ -90,5 +94,15 @@ public class tde03_2
 				try { buf.close(); } catch (IOException e) {}
 		}
 		return out;
+	}
+
+
+	private static int searchline(ArrayList<String> lines, String search)
+	{
+		for(int i=0; i<lines.size(); i++)
+			if (lines.get(i).equals(search))
+				return i;
+
+		return -1;
 	}
 }
