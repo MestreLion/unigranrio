@@ -17,6 +17,9 @@
  *    along with this program. See <http://www.gnu.org/licenses/gpl.html>
  */
 
+package tde02;
+
+
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -56,7 +59,7 @@ public class tde02_3
 		System.err.println("TDE02-3: Ordena as linhas de um texto");
 		if(notBlank(out))
 			System.err.println("ERRO: " + out);
-		System.err.println("Uso: `java tde02_3 ARQUIVO`");
+		System.err.println("Uso: `cd .. && java tde02.tde02_3 ARQUIVO`");
 	}
 	private static void usage()            { usage("",  null); }
 	private static void usage(String msg)  { usage(msg, null); }
@@ -69,7 +72,7 @@ public class tde02_3
 	}
 
 
-	private static ArrayList<String> readfile(String path)
+	public static ArrayList<String> readfile(String path)
 	{
 		ArrayList<String> out = new ArrayList<String>();
 		BufferedReader buf = null;
@@ -89,7 +92,7 @@ public class tde02_3
 	}
 
 
-	private static void sortlines(ArrayList<String> lines)
+	public static void sortlines(ArrayList<String> lines)
 	{
 		String aux;
 		boolean swap;
@@ -108,7 +111,7 @@ public class tde02_3
 	}
 
 
-	private static void printlines(ArrayList<String> lines)
+	public static void printlines(ArrayList<String> lines)
 	{
 		for(String line: lines)
 			System.out.println(line);

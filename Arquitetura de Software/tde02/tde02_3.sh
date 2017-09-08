@@ -30,6 +30,7 @@ msg()    { [[ "${1:-}" ]] && echo "$myname: $@" >&2; }
 myname="${0##*/}"
 mydir=$(dirname "$(readlink -f "$0")")
 
+pkg=${mydir##*/}
 cls=${myname%.*}
 src=$mydir/$cls.java
 obj=$mydir/$cls.class
@@ -45,5 +46,5 @@ if (( $(mtime "$obj") <= $(mtime "$src") )); then
 	javac "$src" || fatal
 fi
 
-cd "$mydir" &&
-java "$cls" "$@"
+cd "$mydir"/.. &&
+java "$pkg"."$cls" "$@"
