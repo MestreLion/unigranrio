@@ -1,0 +1,1 @@
+metodo validacao pra cada atributo da classe, na classe, void, throw exception, chamado pelo set de cada atributo
