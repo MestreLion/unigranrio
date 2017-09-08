@@ -1,0 +1,8 @@
+- JSF (Mohave?)
+	Tudo processado no servidor, via AJAX ou submit
+	Faz View e Control
+	Pode usar Facelet para View, mas também tem JSF
+- Spring/MVC
+
+Google Classroom
+	qwrfp4
