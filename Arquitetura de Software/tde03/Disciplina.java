@@ -19,14 +19,14 @@ public final class Disciplina {
   }
 
   /**
-   * @return - Retorna código.
+   * @return - Retorna cÃ³digo.
    */
   public String getCodigo() {
     return codigo;
   }
 
   /**
-   * @param codigo - Inserir código.
+   * @param codigo - Inserir cÃ³digo.
    */
   public void setCodigo(String codigo) {
     this.codigo = codigo;
@@ -47,14 +47,14 @@ public final class Disciplina {
   }
 
   /**
-   * @return - Retorna número de créditos.
+   * @return - Retorna nÃºmero de crÃ©ditos.
    */
   public int getNumCreditos() {
     return numCreditos;
   }
 
   /**
-   * @param numCreditos - Inserir número de créditos.
+   * @param numCreditos - Inserir nÃºmero de crÃ©ditos.
    */
   public void setNumCreditos(int numCreditos) {
     this.numCreditos = numCreditos;
@@ -66,6 +66,5 @@ public final class Disciplina {
   @Override
   public String toString() {
     return "Disciplina [codigo=" + codigo + ", nome=" + nome + ", numCreditos=" + numCreditos + "]";
-    return "Disciplina(" + codigo + ", \"" + nome + "\", " + numCreditos + ")";
   }
 }

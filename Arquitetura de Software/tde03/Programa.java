@@ -65,22 +65,22 @@ public class Programa {
         System.out.println("Listando as Diciplinas");
         System.out.println("================");
         for (Disciplina d : listaDisciplina) {
-            System.out.println("Código: " + d.getCodigo());
+            System.out.println("CÃ³digo: " + d.getCodigo());
             System.out.println("Nome: " + d.getNome());
-            System.out.println("Número Créditos: " + Integer.toString(d.getNumCreditos()));
+            System.out.println("NÃºmero CrÃ©ditos: " + Integer.toString(d.getNumCreditos()));
             System.out.println("----------------");
         }
     }
 
     /**
      * @param codigo
-     *            - Validação do código.
+     *            - ValidaÃ§Ã£o do cÃ³digo.
      * @return - Retorno para resposta.
      */
     public static String validaCodigo() {
         valida = false;
         String codigo;
-        System.out.println("Digite o código:");
+        System.out.println("Digite o cÃ³digo:");
         do {
             codigo = teclado.next();
             pattern = Pattern.compile("^[A-Z]{3,3}+[0-9]{3,3}$");
@@ -88,10 +88,10 @@ public class Programa {
                 valida = true;
             }
             else {
-                System.err.println("Digite um código valido. \n"
+                System.err.println("Digite um cÃ³digo valido. \n"
                         + " Deve conter exatamente 6 digitos. \n"
-                        + " As três primeiras Tem que ser maiusculas e tem que ser Caracteres[A-Z]. \n"
-                        + " Os três ultimos tem que ser números[0-9].");
+                        + " As trÃªs primeiras Tem que ser maiusculas e tem que ser Caracteres[A-Z]. \n"
+                        + " Os trÃªs ultimos tem que ser nÃºmeros[0-9].");
             }
         } while (valida == false);
         return codigo;
@@ -99,7 +99,7 @@ public class Programa {
 
     /**
      * @param nome
-     *            - Validação do nome.
+     *            - ValidaÃ§Ã£o do nome.
      * @return - Retorno para resposta.
      */
     public static String validaNome() {
@@ -120,19 +120,19 @@ public class Programa {
 
     /**
      * @param numCreditos
-     *            - Validação do numCredito.
+     *            - ValidaÃ§Ã£o do numCredito.
      * @return - Retorno para resposta.
      */
     public static int validaNumCreditos() {
         valida = false;
         int numCredito;
-        System.out.println("Digite o número de créditos: ");
+        System.out.println("Digite o nÃºmero de crÃ©ditos: ");
         do {
             numCredito = teclado.nextInt();
             if (numCredito > 2 && numCredito < 6) {
                 valida = true;
             } else {
-                System.err.println("Digite um número de crédito valido. \n"
+                System.err.println("Digite um nÃºmero de crÃ©dito valido. \n"
                         + " Que seja entre 2 e 6:");
             }
         } while (valida == false);
